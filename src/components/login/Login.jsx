@@ -1,11 +1,22 @@
 import React from 'react';
 import AuthService from '../../services/auth.service';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router';
 
 export default function Login() {
     const { register, handleSubmit, errors } = useForm();
+    const history = useHistory();
 
-    return (<form action="#" onSubmit={handleSubmit(_doLogin)}>
+    async function doLogin({ username, password }) {
+        try {
+            await AuthService.login(username, password);
+            history.push('/posts');
+        } catch (e) {
+            throw e;
+        }
+    }
+
+    return (<form action="#" onSubmit={handleSubmit(doLogin)}>
         <div>
             <label htmlFor="username">Usuário:</label>
             <input type="text" name="username" ref={register({ required: true })} />
@@ -20,13 +31,4 @@ export default function Login() {
 
         <button type="submit">Entrar</button>
     </form>);
-}
-
-async function _doLogin({ username, password }) {
-    try {
-        let userData = await AuthService.login(username, password);
-        console.log(userData);
-    } catch (e) {
-        throw e;
-    }
 }
