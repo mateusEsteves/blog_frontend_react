@@ -5,6 +5,11 @@ class _PostService extends BaseService {
         const posts = await this.get('http://localhost:3200/post');
         return posts.data;
     }
+
+    async getPostById(id) {
+        const post = await this.get(`http://localhost:3200/post/${id}`);
+        return post.data;
+    }
 }
 
 const PostService = new _PostService();
