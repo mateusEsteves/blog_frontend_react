@@ -27,7 +27,7 @@ export default function PostEditCreate() {
                 {errors.text && <span>Certifique-se que o texto tem no máximo 240 caracteres.</span>}
             </div>
 
-            <button type="submit">{postId == null ? "Postar" : "Atualizar"}</button>
+            <button type="submit">{postId == null ? 'Postar' : 'Atualizar'}</button>
         </form>
     )
 }
