@@ -1,7 +1,9 @@
 import React from 'react';
 import usePostData from '../../hooks/post-data';
+import { useParams } from 'react-router';
 
-export default function PostDetail({ postId }) {
+export default function PostDetail() {
+    const { postId } = useParams();
     const [postData] = usePostData(postId);
 
     return (
