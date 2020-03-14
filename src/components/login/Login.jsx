@@ -5,7 +5,7 @@ import { useHistory } from 'react-router';
 
 export default function Login() {
     const { register, handleSubmit, errors } = useForm();
-    const history = useHistory();
+    const history = useHistory();    
 
     async function doLogin({ username, password }) {
         try {
