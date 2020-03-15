@@ -16,7 +16,7 @@ export default function Login() {
 
   return (
     <main className={styles.Container}>
-      <form action="#" onSubmit={handleSubmit(doLogin)} className="LoginForm">
+      <form action="#" onSubmit={handleSubmit(doLogin)} className={styles.LoginForm}>
         <StandardInput
           ref={register({ required: true })}
           hasError={errors.username != null}
@@ -24,6 +24,7 @@ export default function Login() {
           label="Usuário:"
           type="text"
           errorMsg="Por favor informe seu nome de usuário"
+          inputContainerClass={styles.LoginForm__inputContainer}
         />
 
         <StandardInput
@@ -33,6 +34,7 @@ export default function Login() {
           hasError={errors.password != null}
           label="Senha:"
           errorMsg="Por favor informe sua senha"
+          inputContainerClass={styles.LoginForm__inputContainer}
         />
         <button type="submit">Entrar</button>
       </form>

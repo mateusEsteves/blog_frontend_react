@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.LoginForm {
-  width: 200px;
-  height: 200px;
+.LoginForm .LoginForm__inputContainer {
+  width: 300px;
+  margin-bottom: 12px;
 }
