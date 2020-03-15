@@ -10,6 +10,10 @@ class _PostService extends BaseService {
     const post = await this.get(`http://localhost:3200/post/${id}`);
     return post.data;
   }
+
+  async updatePost(postData) {
+    await this.patch('http://localhost:3200/post', postData);
+  }
 }
 
 const PostService = new _PostService();

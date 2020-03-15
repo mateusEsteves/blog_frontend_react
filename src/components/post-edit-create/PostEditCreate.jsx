@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
 import usePostData from '../../hooks/post-data';
+import PostService from '../../services/post.service';
+import AuthService from '../../services/auth.service';
 
 export default function PostEditCreate() {
   const { postId } = useParams();
-  const [postData, setPostData] = usePostData(postId);
+  const [postData] = usePostData(postId);
 
   const { register, handleSubmit, errors } = useForm();
 
-  function updatePostData(newPost) {
-    setPostData(newPost);
-    console.log('updated', newPost);
+  useEffect(() => {
+    if (postData.authorId != null && postData.authorId !== AuthService.user.id) {
+      console.log(AuthService.user.id);
+    }
+  }, [postData.authorId]);
+
+  async function updatePostData(post) {
+    if (postId !== null) {
+      const newPost = { ...postData, ...post };
+      await PostService.updatePost(newPost);
+    }
   }
 
   return (
