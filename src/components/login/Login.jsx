@@ -21,7 +21,7 @@ export default function Login() {
           ref={register({ required: true })}
           hasError={errors.username != null}
           name="username"
-          label="Usuário"
+          label="Usuário:"
           type="text"
           errorMsg="Por favor informe seu nome de usuário"
         />
@@ -34,7 +34,6 @@ export default function Login() {
           label="Senha:"
           errorMsg="Por favor informe sua senha"
         />
-
         <button type="submit">Entrar</button>
       </form>
     </main>
