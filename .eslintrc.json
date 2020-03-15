@@ -24,6 +24,8 @@
     ],
     "rules": {
         "jsx-a11y/label-has-associated-control": "off",
-        "class-methods-use-this": "off"
+        "class-methods-use-this": "off",
+        "react/prop-types": "off",
+        "react/require-default-props": "off"
     }
 }
