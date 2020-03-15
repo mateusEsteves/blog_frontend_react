@@ -1,15 +1,15 @@
-import BaseService from "./base.service";
+import BaseService from './base.service';
 
 class _PostService extends BaseService {
-    async getAllPosts() {        
-        const posts = await this.get('http://localhost:3200/post');
-        return posts.data;
-    }
+  async getAllPosts() {
+    const posts = await this.get('http://localhost:3200/post');
+    return posts.data;
+  }
 
-    async getPostById(id) {
-        const post = await this.get(`http://localhost:3200/post/${id}`);
-        return post.data;
-    }
+  async getPostById(id) {
+    const post = await this.get(`http://localhost:3200/post/${id}`);
+    return post.data;
+  }
 }
 
 const PostService = new _PostService();

@@ -1,11 +1,11 @@
 import Axios from 'axios';
 
 export default class BaseService {
-    constructor() {
-        let axiosInstance = Axios.create({
-            withCredentials: true
-        });
+  constructor() {
+    const axiosInstance = Axios.create({
+      withCredentials: true,
+    });
 
-        Object.assign(this, axiosInstance);
-    }
+    Object.assign(this, axiosInstance);
+  }
 }

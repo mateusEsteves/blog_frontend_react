@@ -1,24 +1,24 @@
-import BaseService from "./base.service";
+import BaseService from './base.service';
 
 class _AuthService extends BaseService {
-    login(username, password) {
-        return this
-            .post('http://localhost:3200/login', { username, password })
-            .then(result => {
-                this.user = result.data;
-                return result.data;
-            });
-    }
+  login(username, password) {
+    return this
+      .post('http://localhost:3200/login', { username, password })
+      .then((result) => {
+        this.user = result.data;
+        return result.data;
+      });
+  }
 
-    set user(user) {
-        let userAsString = JSON.stringify(user);
-        window.localStorage.setItem('user', userAsString);
-    }
+  set user(user) {
+    const userAsString = JSON.stringify(user);
+    window.localStorage.setItem('user', userAsString);
+  }
 
-    get user() {
-        let userAsString = window.localStorage.getItem('user');
-        return JSON.parse(userAsString);
-    }
+  get user() {
+    const userAsString = window.localStorage.getItem('user');
+    return JSON.parse(userAsString);
+  }
 }
 
 const AuthService = new _AuthService();
