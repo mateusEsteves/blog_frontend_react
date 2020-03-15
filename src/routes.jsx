@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import {
   Switch, BrowserRouter as Router, Route, Redirect,
 } from 'react-router-dom';
+import PrivatePage from './components/util/PrivatePage';
 
 const Login = lazy(() => import('./components/login/Login'));
 const PostList = lazy(() => import('./components/post-list/PostList'));
@@ -21,17 +22,17 @@ export default function AppRouter() {
             <PostList />
           </Route>
 
-          <Route path="/post/visualizar/:postId">
+          <PrivatePage path="/post/visualizar/:postId">
             <PostDetail />
-          </Route>
+          </PrivatePage>
 
-          <Route path="/post/editar/:postId">
+          <PrivatePage path="/post/editar/:postId">
             <PostEditCreate />
-          </Route>
+          </PrivatePage>
 
-          <Route path="/post/criar">
+          <PrivatePage path="/post/criar">
             <PostEditCreate />
-          </Route>
+          </PrivatePage>
 
           <Route path="*">
             <Redirect to="/posts" />
