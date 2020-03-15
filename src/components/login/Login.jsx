@@ -7,10 +7,10 @@ export default function Login() {
   const { register, handleSubmit, errors } = useForm();
   const history = useHistory();
 
-  async function doLogin({ username, password }) {
-    await AuthService.login(username, password);
-    history.push('/posts');
-  }
+    async function doLogin({ username, password }) {
+      await AuthService.login(username, password);
+      history.push('/posts');
+    }
 
   return (
     <form action="#" onSubmit={handleSubmit(doLogin)}>
