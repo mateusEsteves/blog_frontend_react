@@ -2,6 +2,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router';
 import AuthService from '../../services/auth.service';
+import styles from './Login.module.css';
+import StandardInput from '../shared/input/StandardInput';
 
 export default function Login() {
   const { register, handleSubmit, errors } = useForm();
@@ -13,20 +15,28 @@ export default function Login() {
   }
 
   return (
-    <form action="#" onSubmit={handleSubmit(doLogin)}>
-      <div>
-        <label htmlFor="username">Usuário:</label>
-        <input type="text" name="username" ref={register({ required: true })} />
-        {errors.username && <span>Por favor informe o nome do usuário</span>}
-      </div>
+    <main className={styles.Container}>
+      <form action="#" onSubmit={handleSubmit(doLogin)} className="LoginForm">
+        <StandardInput
+          ref={register({ required: true })}
+          hasError={errors.username != null}
+          name="username"
+          label="Usuário"
+          type="text"
+          errorMsg="Por favor informe seu nome de usuário"
+        />
 
-      <div>
-        <label htmlFor="password">Senha:</label>
-        <input type="password" name="password" ref={register({ required: true })} />
-        {errors.password && <span>Por favor informe sua senha</span>}
-      </div>
+        <StandardInput
+          ref={register({ required: true })}
+          name="password"
+          type="password"
+          hasError={errors.password != null}
+          label="Senha:"
+          errorMsg="Por favor informe sua senha"
+        />
 
-      <button type="submit">Entrar</button>
-    </form>
+        <button type="submit">Entrar</button>
+      </form>
+    </main>
   );
 }

@@ -35,7 +35,7 @@ export default function AppRouter() {
           </PrivatePage>
 
           <Route path="*">
-            <Redirect to="/posts" />
+            <Redirect to="/login" />
           </Route>
         </Switch>
       </Suspense>
