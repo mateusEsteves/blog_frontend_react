@@ -4,12 +4,17 @@
 }
 
 .Input {
-  border: 2px gray solid;
+  border: none;
   border-radius: 8px;
-  height: 28px;
+  background-color: #e0e0e0;
+  height: 40px;
   width: 100%;
   padding-left: 10px;
   box-sizing: border-box;
+}
+
+.Input::placeholder {
+  font-size: .9rem;
 }
 
 .Input:focus {

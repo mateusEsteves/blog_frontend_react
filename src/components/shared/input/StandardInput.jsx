@@ -6,8 +6,14 @@ function Input({
 }, ref) {
   return (
     <div className={inputContainerClass}>
-      <label htmlFor={name} className={styles.Label}>{label}</label>
-      <input type={type} name={name} ref={ref} id={name} className={styles.Input} />
+      <input
+        type={type}
+        name={name}
+        ref={ref}
+        id={name}
+        className={styles.Input}
+        placeholder={label}
+      />
       {hasError && <p className={styles.ErrorMsg}>{errorMsg}</p>}
     </div>
   );

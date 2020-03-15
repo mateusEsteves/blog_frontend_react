@@ -6,7 +6,55 @@
   align-items: center;
 }
 
+.LoginForm {
+  display: block;
+  padding: 48px;
+  border-radius: 8px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.LoginForm__title {
+  text-align: center;
+  margin: 0 0 20px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 .LoginForm .LoginForm__inputContainer {
   width: 300px;
   margin-bottom: 12px;
+}
+
+.LoginForm__ctaContainer {
+  margin-top: 32px;
+}
+
+.LoginForm__button {
+  display: block;
+  width: 100%;
+}
+
+.LoginForm__button:not(:last-of-type) {
+  margin-bottom: 12px;
+}
+
+.Button {
+  border: none;
+  padding: 8px 24px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: .9rem;
+}
+
+.Button_primary {
+  background: #655bb7;
+  color: white;
+}
+
+.LoginForm__createAccount {
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-top: 12px;
 }
