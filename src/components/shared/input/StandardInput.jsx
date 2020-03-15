@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import styles from './StandardInput.module.css';
 
 function Input({
-  hasError, type, name, label, errorMsg, inputContainerClass
+  hasError, type, name, label, errorMsg, inputContainerClass,
 }, ref) {
   return (
     <div className={inputContainerClass}>
