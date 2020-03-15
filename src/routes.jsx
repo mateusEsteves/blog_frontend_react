@@ -2,12 +2,11 @@ import React, { lazy, Suspense } from 'react';
 import {
   Switch, BrowserRouter as Router, Route, Redirect,
 } from 'react-router-dom';
-import PrivatePage from './components/util/PrivatePage';
 
 const Login = lazy(() => import('./components/login/Login'));
 const PostList = lazy(() => import('./components/post-list/PostList'));
 const PostDetail = lazy(() => import('./components/post-detail/PostDetail'));
-const PostEditCreate = lazy(() => import('./components/post-create-update/PostEditCreate'));
+const PostEditCreate = lazy(() => import('./components/post-edit-create/PostEditCreate'));
 
 export default function AppRouter() {
   return (
@@ -22,20 +21,16 @@ export default function AppRouter() {
             <PostList />
           </Route>
 
-          <PrivatePage unauthorizedRedirectPath="/login">
-            <Route path="/post/criar">
-              <PostEditCreate />
-            </Route>
-          </PrivatePage>
-
-          <PrivatePage unauthorizedRedirectPath="/login">
-            <Route path="/post/editar/:postId">
-              <PostEditCreate />
-            </Route>
-          </PrivatePage>
-
-          <Route exact path="/post/:postId">
+          <Route path="/post/visualizar/:postId">
             <PostDetail />
+          </Route>
+
+          <Route path="/post/editar/:postId">
+            <PostEditCreate />
+          </Route>
+
+          <Route path="/post/criar">
+            <PostEditCreate />
           </Route>
 
           <Route path="*">
