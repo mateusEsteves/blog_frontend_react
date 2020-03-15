@@ -24,10 +24,9 @@ export default function PostList() {
       <h1>{item.title}</h1>
       <p>{item.text}</p>
       <button onClick={() => editPost(item.id)} type="button">Editar</button>
-      <button onClick={() => deletePost(item.id)}>Deletar</button>
+      <button onClick={() => deletePost(item.id)} type="button">Deletar</button>
     </div>
   ));
-
 
   if (posts.length === 0) {
     return <div>Carregando...</div>;
