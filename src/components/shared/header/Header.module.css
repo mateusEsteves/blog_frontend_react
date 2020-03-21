@@ -1,0 +1,36 @@
+.Header {
+  height: 64px;
+  background: #655bb7;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header__logo {
+  margin: 0 0 0 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.Header__searchInput {
+  width: 50%;
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  background: rgb(151, 141, 233);
+}
+
+.Header__searchInput:focus {
+  outline: none;
+}
+
+.Header__searchInput::placeholder {
+  color: #655bb7;
+}
+
+.Header__userMenuIcon {
+  margin: 0 24px 0 0;
+}
