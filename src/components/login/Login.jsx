@@ -17,7 +17,9 @@ export default function Login() {
   }
 
   return (
+
     <main className={styles.Container}>
+      <div>{process.env.REACT_APP_TESTE}</div>
       <form action="#" onSubmit={handleSubmit(doLogin)} className={styles.LoginForm}>
         <p className={styles.LoginForm__title}>Welcome to The Blog</p>
         <StandardInput

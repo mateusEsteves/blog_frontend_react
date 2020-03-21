@@ -1,13 +1,18 @@
 import BaseService from './base.service';
 
 class _AuthService extends BaseService {
-  login(username, password) {
-    return this
-      .post('http://localhost:3200/login', { username, password })
-      .then((result) => {
-        this.user = result.data;
-        return result.data;
-      });
+  login() {
+    // return this
+    //   .post('http://localhost:3200/login', { username, password })
+    //   .then((result) => {
+    //     this.user = result.data;
+    //     return result.data;
+    //   });
+
+    return Promise.resolve({
+      username: 'admin',
+      id: '93c5ddfd-cdc7-42ee-900a-911b2a23737f',
+    });
   }
 
   set user(user) {
